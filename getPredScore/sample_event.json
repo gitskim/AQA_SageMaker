@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-west-2",
+      "eventTime": "2021-08-09T14:09:27.949Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AROA2RONYDYC6XSQNUCS5:AQAUploadProcess-UploadRequestFunction-cu23HJU7LLPP"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "168.103.87.195"
+      },
+      "responseElements": {
+        "x-amz-request-id": "8DMY9RV96D1KVJ18",
+        "x-amz-id-2": "U8zMnsPizZD3kz7kGgVIGYjmsqTuntyZtx4qp7F5qVBW0f8GwGkklk/Z2wEZJ8g8mPm+++uDPB23x/HeN2AftOStEjIrsGBt"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "dfff4043-ebe6-42e2-9706-9d0141e014db",
+        "bucket": {
+          "name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr",
+          "ownerIdentity": {
+            "principalId": "APS64TRX9P1NO"
+          },
+          "arn": "arn:aws:s3:::aqauploadprocess-s3uploadbucket-lm9bpkntrclr"
+        },
+        "object": {
+          "key": "20210809_140917_944266.mov",
+          "size": 2419290,
+          "eTag": "7d258288f6d748798331f321154a6c2c",
+          "sequencer": "006111371E929A9802"
+        }
+      }
+    }
+  ]
+}
