@@ -23,7 +23,7 @@ docker build . -t aqa
 ```
 2. 
 ``` 
-docker run -v $(pwd)/test_dir:/opt/ml -p 8080:8080 --rm aqa serve
+docker run -v $(pwd) -p 8080:8080 --rm aqa serve
 ```
 3. Open another terminal
 4. Run the following
