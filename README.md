@@ -17,8 +17,14 @@ curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucke
 ```
 
 ## To test with docker
-1. docker build . -t suhyun
-2. docker run -v $(pwd)/test_dir:/opt/ml -p 8080:8080 --rm suhyun serve
+1. 
+```
+docker build . -t aqa
+```
+2. 
+``` 
+docker run -v $(pwd)/test_dir:/opt/ml -p 8080:8080 --rm aqa serve
+```
 3. Open another terminal
 4. Run the following
 ```
