@@ -48,6 +48,12 @@ transform = transforms.Compose(
 
 s3 = boto3.client("s3")
 
+# PING check used by creation of sagemaker endpoint
+@app.route('/ping', methods=['GET'])
+def ping_check():
+    logger.info("PING!")
+    return flask.Response(response=json.dumps({"ping_status": "ok"}), status=200)
+
 '''
 curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr", "object_key": "20210809_140917_944266.mov"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
 '''
