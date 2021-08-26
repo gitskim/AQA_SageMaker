@@ -2,13 +2,11 @@ import json
 import logging
 import os
 import random
-import tempfile
 import urllib
 
 import boto3
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
 from torchvision import transforms
 
 import cv2 as cv
@@ -18,7 +16,6 @@ from models.my_fc6 import my_fc6
 from models.score_regressor import score_regressor
 from opts import *
 import flask
-
 
 app = flask.Flask(__name__)
 logger = logging.getLogger()
@@ -34,11 +31,6 @@ torch.backends.cudnn.deterministic = True
 
 current_path = os.path.abspath(os.getcwd())
 
-m1_path = os.path.join(current_path, m1_path)
-m2_path = os.path.join(current_path, m2_path)
-m3_path = os.path.join(current_path, m3_path)
-c3d_path = os.path.join(current_path, c3d_path)
-
 transform = transforms.Compose(
     [
         transforms.ToTensor(),
@@ -48,17 +40,21 @@ transform = transforms.Compose(
 
 s3 = boto3.client("s3")
 
+
 # PING check used by creation of sagemaker endpoint
 @app.route('/ping', methods=['GET'])
 def ping_check():
     logger.info("PING!")
     return flask.Response(response=json.dumps({"ping_status": "ok"}), status=200)
 
+
 '''
 curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr", "object_key": "20210809_140917_944266.mov"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
 '''
+
+
 # Lambda handler executed by lambda function
-@app.route('/invocations', methods=['POST','PUT'])
+@app.route('/invocations', methods=['POST', 'PUT'])
 def handler():
     logger.info("Received event.")
 
@@ -117,7 +113,7 @@ def center_crop(img, dim):
     crop_height = dim[1] if dim[1] < img.shape[0] else img.shape[0]
     mid_x, mid_y = int(width / 2), int(height / 2)
     cw2, ch2 = int(crop_width / 2), int(crop_height / 2)
-    crop_img = img[mid_y - ch2 : mid_y + ch2, mid_x - cw2 : mid_x + cw2]
+    crop_img = img[mid_y - ch2: mid_y + ch2, mid_x - cw2: mid_x + cw2]
     return crop_img
 
 
@@ -147,8 +143,8 @@ def action_classifier(frames):
 
         # print top predictions
         top_inds = prediction[0].argsort()[::-1][
-            :5
-        ]  # reverse sort and take five largest items
+                   :5
+                   ]  # reverse sort and take five largest items
         logger.info("\nTop 5:")
         logger.info(f"Top inds: {top_inds}")
     return top_inds[0]
@@ -222,7 +218,7 @@ def inference_with_one_video_frames(frames):
         clip_feats = torch.Tensor([])
         logger.info(f"frames shape: {frames.shape}")
         for i in np.arange(0, frames.shape[2], 16):
-            clip = frames[:, :, i : i + 16, :, :]
+            clip = frames[:, :, i: i + 16, :, :]
             model_CNN = model_CNN.double()
             clip_feats_temp = model_CNN(clip)
 
