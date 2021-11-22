@@ -1,5 +1,7 @@
 # AQA_SageMaker
 
+The following example starts from here: https://github.com/aws/amazon-sagemaker-examples/tree/master/advanced_functionality/scikit_bring_your_own/container
+
 ## To test with Flask
 
 1. under AQA_SageMaker directory
