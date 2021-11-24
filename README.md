@@ -14,7 +14,7 @@ flask run
 3. run the following
 
 ```
-curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr", "object_key": "20210809_140917_944266.mov"}}' -H "Content-Type: application/json" -v http://localhost:5000/invocations
+curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lntb7jdvnhhg", "object_key": "20211117_102853_978476.mp4"}}' -H "Content-Type: application/json" -v http://localhost:5000/invocations
 
 ```
 
@@ -30,7 +30,7 @@ docker run -v $(pwd) -p 8080:8080 --rm aqa serve
 3. Open another terminal
 4. Run the following
 ```
-curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr", "object_key": "20210809_140917_944266.mov"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
+curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lntb7jdvnhhg", "object_key": "20211117_102853_978476.mp4"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
 
 ```
 
