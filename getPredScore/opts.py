@@ -5,11 +5,11 @@ C, H, W = 3,112,112
 input_resize = 171,128#
 test_batch_size = 1
 
-m1_path = '/opt/ml/model/model_CNN_94.pth'
-m2_path = '/opt/ml/model/model_my_fc6_94.pth'
-m3_path = '/opt/ml/model/model_score_regressor_94.pth'
-m4_path = '/opt/ml/model/model_dive_classifier_94.pth'
-c3d_path = '/opt/ml/model/c3d.pickle'
+m1_path = '/opt/program/models/model_CNN_94.pth'
+m2_path = '/opt/program/models/model_my_fc6_94.pth'
+m3_path = '/opt/program/models/model_score_regressor_94.pth'
+m4_path = '/opt/program/models/model_dive_classifier_94.pth'
+c3d_path = '/opt/program/models/c3d.pickle'
 
 # m1_path = '/tmp/model_CNN_94.pth'
 # m2_path = '/tmp/model_my_fc6_94.pth'

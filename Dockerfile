@@ -6,12 +6,16 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
          wget \
          python3-pip \
          python3-setuptools \
+         python3-dev \
+         build-essential \
          nginx \
          ca-certificates \
          libglib2.0-0 \
          libsm6 \
          libxrender1 \
          libxext6 \
+         zlib1g-dev \
+         libjpeg-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Python 3 setup
