@@ -25,7 +25,7 @@ docker build . -t aqa
 ```
 2. 
 ``` 
-docker run -v $(pwd) -p 8080:8080 --rm aqa serve
+docker run -e AWS_ACCESS_KEY_ID=<your_aws_access_key_id> -e AWS_SECRET_ACCESS_KEY=<your_aws_secret_access_key> -v $(pwd) -p 8080:8080 --rm aqa serve
 ```
 3. Open another terminal
 4. Run the following
