@@ -2,22 +2,6 @@
 
 The following example starts from here: https://github.com/aws/amazon-sagemaker-examples/tree/master/advanced_functionality/scikit_bring_your_own/container
 
-## To test with Flask
-
-1. under AQA_SageMaker directory
-```c
-export FLASK_APP=process_predict.py
-flask run
-```
-
-2. open another terminal
-3. run the following
-
-```
-curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lntb7jdvnhhg", "object_key": "20211117_102853_978476.mp4"}}' -H "Content-Type: application/json" -v http://localhost:5000/invocations
-
-```
-
 ## To test with docker
 1. 
 ```
