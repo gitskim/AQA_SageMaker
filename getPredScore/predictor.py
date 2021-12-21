@@ -47,6 +47,7 @@ def ping_check():
     logger.info("PING!")
     return flask.Response(response=json.dumps({"ping_status": "ok"}), status=200)
 
+
 # Lambda handler executed by lambda function
 @app.route('/invocations', methods=['POST', 'PUT'])
 def handler():
