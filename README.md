@@ -2,7 +2,9 @@
 
 The following example starts from here: https://github.com/aws/amazon-sagemaker-examples/tree/master/advanced_functionality/scikit_bring_your_own/container
 
-## To test with docker
+## To test with docker locally
+* Make sure to include the models and their weights in under the models directory.
+
 1. 
 ```
 docker build . -t aqa
@@ -17,6 +19,3 @@ docker run -e AWS_ACCESS_KEY_ID=<your_aws_access_key_id> -e AWS_SECRET_ACCESS_KE
 curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lntb7jdvnhhg", "object_key": "20211117_102853_978476.mp4"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
 
 ```
-
-## Note
-Only the port number is different when I opened another terminal to test. 
