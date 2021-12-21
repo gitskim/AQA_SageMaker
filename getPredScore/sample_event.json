@@ -20,14 +20,14 @@
         "s3SchemaVersion": "1.0",
         "configurationId": "dfff4043-ebe6-42e2-9706-9d0141e014db",
         "bucket": {
-          "name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr",
+          "name": "aqauploadprocess-s3uploadbucket-lntb7jdvnhhg",
           "ownerIdentity": {
             "principalId": "APS64TRX9P1NO"
           },
-          "arn": "arn:aws:s3:::aqauploadprocess-s3uploadbucket-lm9bpkntrclr"
+          "arn": "arn:aws:s3:::aqauploadprocess-s3uploadbucket-lntb7jdvnhhg"
         },
         "object": {
-          "key": "20210809_140917_944266.mov",
+          "key": "20211117_102853_978476.mp4",
           "size": 2419290,
           "eTag": "7d258288f6d748798331f321154a6c2c",
           "sequencer": "006111371E929A9802"
