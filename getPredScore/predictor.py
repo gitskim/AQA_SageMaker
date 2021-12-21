@@ -47,12 +47,6 @@ def ping_check():
     logger.info("PING!")
     return flask.Response(response=json.dumps({"ping_status": "ok"}), status=200)
 
-
-'''
-curl --data-binary '{"aqa_data": {"bucket_name": "aqauploadprocess-s3uploadbucket-lm9bpkntrclr", "object_key": "20210809_140917_944266.mov"}}' -H "Content-Type: application/json" -v http://localhost:8080/invocations
-'''
-
-
 # Lambda handler executed by lambda function
 @app.route('/invocations', methods=['POST', 'PUT'])
 def handler():
