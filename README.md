@@ -1,7 +1,8 @@
 # AQA_SageMaker
 
 Based on the tutorial [Deploying your ML models to AWS SageMaker
-](https://towardsdatascience.com/deploying-your-ml-models-to-aws-sagemaker-6948439f48e1)
+](https://towardsdatascience.com/deploying-your-ml-models-to-aws-sagemaker-6948439f48e1).
+
 The following example starts from here: https://github.com/aws/amazon-sagemaker-examples/tree/master/advanced_functionality/scikit_bring_your_own/container
 
 ## To test with docker locally
